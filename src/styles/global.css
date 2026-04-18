@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-outfit: 'Outfit', sans-serif;
+  
+  --color-navy: #0b0e17;
+  --color-navy2: #0f1420;
+  --color-navy3: #161b2e;
+  --color-gold: #c9a84c;
+  --color-gold2: #e2c07b;
+  --color-gold3: #f0d9a5;
+  --color-smoke: #b8bdd4;
+}
+
+@layer base {
+  :root {
+    --background: 222 50% 10%; /* slate-950 roughly */
+    --foreground: 222 20% 80%;
+    --card: 224 35% 15%; /* navy3 */
+    --card-foreground: 222 20% 80%;
+    --popover: 224 35% 15%;
+    --popover-foreground: 222 20% 80%;
+    --primary: 43 54% 54%; /* gold */
+    --primary-foreground: 222 50% 10%; /* navy */
+    --secondary: 224 35% 15%;
+    --secondary-foreground: 222 20% 80%;
+    --muted: 224 35% 15%;
+    --muted-foreground: 225 15% 48%; /* muted */
+    --accent: 224 35% 20%;
+    --accent-foreground: 222 20% 80%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 224 35% 18%;
+    --input: 224 35% 18%;
+    --ring: 43 54% 54%;
+    --radius: 0.25rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground bg-navy;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--navy);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 3px;
+  }
+}
+@layer utilities {
+  .section-label {
+    @apply font-mono text-[0.65rem] tracking-[0.25em] uppercase text-gold mb-4 flex items-center gap-3 relative;
+  }
+  .section-label::before {
+    content: '';
+    @apply w-8 h-[1px] bg-gold block;
+  }
+  .section-title {
+    @apply font-serif text-[clamp(2.2rem,4vw,3.4rem)] font-light text-white leading-[1.15] mb-6;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    @apply opacity-0 translate-y-[30px] transition-all duration-700 ease-out;
+  }
+  .animate-fade-up.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}

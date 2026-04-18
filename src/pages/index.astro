@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Hero } from '../components/Hero';
+import { About } from '../components/About';
+import { Skills } from '../components/Skills';
+import { Projects } from '../components/Projects';
+import { Experience } from '../components/Experience';
+import { Contact } from '../components/Contact';
+import { Navbar } from '../components/Navbar';
+import { Footer } from '../components/Footer';
+import '../styles/global.css';
+
+const title = "Dennis Jean Thompson — Web Developer";
+const description = "I build fast, scalable web applications. Based in Baguio City, Philippines.";
+---
+<Layout title={title} description={description}>
+  <Navbar client:load />
+  <main class="bg-slate-950 text-slate-300 font-sans selection:bg-amber-500/30 overflow-hidden">
+    <Hero client:load />
+    <About />
+    <Skills />
+    <Projects />
+    <Experience />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+  
+  document.querySelectorAll('.animate-fade-up').forEach((el) => observer.observe(el));
+</script>
