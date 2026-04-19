@@ -10,16 +10,16 @@ import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import '../styles/global.css';
 
-const title = "Dennis Jean Thompson — Web Developer";
-const description = "I build fast, scalable web applications. Based in Baguio City, Philippines.";
+const title = "Dennis Jean Thompson — Full-Stack Developer";
+const description = "Full-Stack Developer | Building fast, accessible web experiences";
 ---
 <Layout title={title} description={description}>
   <Navbar client:load />
-  <main class="bg-slate-950 text-slate-300 font-sans selection:bg-amber-500/30 overflow-hidden">
+  <main class="bg-zinc-950 text-zinc-300 font-sans selection:bg-indigo-500/30 overflow-hidden">
     <Hero client:load />
+    <Projects />
     <About />
     <Skills />
-    <Projects />
     <Experience />
     <Contact />
   </main>

@@ -1,136 +1,121 @@
+import { ExternalLink, Code2 } from 'lucide-react';
+import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 
 export function Projects() {
   const projects = [
     {
-      badge: "★ Featured Project",
-      title: "P.E.R.O. System",
-      desc: "A cloud-based Payroll, Employee, Roster & Operations management platform built for Don Macchiato's Coffee Shop in La Union, Philippines.",
-      tech: ["Full-Stack Web", "Cloud-Based", "Payroll Engine", "Three-Tier Architecture", "SUS Evaluation"],
-      link: "https://github.com/dennisjeanthompson",
-      featured: true,
-      visual: "P.E.R.O"
+      title: "P.E.R.O. Network Payroll System",
+      shortDescription: "A scalable, cloud-based platform standardizing payroll and workforce management.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+      tags: ["React", "TypeScript", "Node.js", "PostgreSQL"],
+      highlights: [
+        "Architected a centralized dashboard capable of handling 50+ local businesses.",
+        "Implemented a dynamic roles-and-permissions rules engine from scratch.",
+        "Reduced manual payroll processing time by 40% across client companies."
+      ],
+      liveLink: "#",
+      githubLink: "#"
     },
     {
-      badge: "AI / Open Source",
-      title: "AutoGPT",
-      desc: "Contributing to the AutoGPT ecosystem — the pioneering autonomous AI agent framework making AI accessible for building and deploying intelligent systems. Forked and explored for personal AI experiments.",
-      tech: ["Python", "AI Agents", "OpenAI API", "Automation"],
-      link: "https://github.com/dennisjeanthompson/AutoGPT"
+      title: "E-Commerce Microservices Migration",
+      shortDescription: "A complete backend rewrite for a major B2B logistics supplier.",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2370&auto=format&fit=crop",
+      tags: ["Vue.js", "Express", "Docker", "AWS"],
+      highlights: [
+        "Spearheaded the transition from a brittle legacy monolith to independent microservices.",
+        "Set up Dockerized containers and AWS automated deployment pipelines.",
+        "Improved system uptime from 96% to 99.9% and resolved critical timeout errors."
+      ],
+      liveLink: "#",
+      githubLink: "#"
     },
     {
-      badge: "Web Application",
-      title: "Workforce Dashboard",
-      desc: "A data-rich admin dashboard for HR operations — visualizing employee performance metrics, attendance tracking, and payroll summaries with real-time updates.",
-      tech: ["React", "Node.js", "Chart.js", "MySQL"],
-      link: "https://github.com/dennisjeanthompson"
-    },
-    {
-      badge: "API Integration",
-      title: "AI Chat Assistant",
-      desc: "A custom AI-powered chatbot interface integrating OpenAI's API — featuring conversation memory, custom personas, and a clean minimal UI deployable as a standalone web app.",
-      tech: ["JavaScript", "OpenAI API", "Firebase", "CSS"],
-      link: "https://github.com/dennisjeanthompson"
+      title: "AutoGPT UI Refactor",
+      shortDescription: "An open-source contribution to enhance the usability of autonomous agents.",
+      image: "https://images.unsplash.com/photo-1675271591211-126ad94e495d?q=80&w=2370&auto=format&fit=crop",
+      tags: ["Next.js", "Tailwind CSS", "Python", "OpenAI API"],
+      highlights: [
+        "Redesigned the primary conversation interface to handle complex nested agent thoughts.",
+        "Optimized client-side rendering for large token-stream outputs.",
+        "Merged code directly into the main repository, used by thousands of developers."
+      ],
+      liveLink: "#",
+      githubLink: "#"
     }
   ];
 
   return (
-    <section id="projects" className="px-6 md:px-16 py-28 bg-navy2">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
-        <div>
-          <div className="section-label">What I've built</div>
-          <h2 className="section-title">Selected <em className="text-gold2 italic">projects</em></h2>
+    <section id="projects" className="py-24 px-6 md:px-16 bg-[#09090b] border-t border-zinc-900/50">
+      <div className="max-w-6xl mx-auto">
+        <div className="inline-flex items-center px-4 py-2 border border-zinc-800 bg-zinc-900/50 rounded-full font-mono text-sm text-indigo-400 mb-6">
+          Selected Work
         </div>
-        <a href="https://github.com/dennisjeanthompson" target="_blank" className="font-mono text-xs tracking-wider uppercase text-gold hover:text-gold2 flex items-center gap-2 hover:gap-3 transition-all">
-          All repositories →
-        </a>
-      </div>
-      
-      <div className="grid md:grid-cols-2 gap-6 animate-fade-up">
-        {projects.map((p, i) => (
-          <a key={i} href={p.link} target="_blank" className={`bg-navy3 border border-border rounded p-8 flex flex-col relative overflow-hidden group hover:border-gold/35 hover:-translate-y-1 transition-all duration-300 no-underline text-inherit ${p.featured ? 'md:col-span-2 grid md:grid-cols-2 gap-8' : ''}`}>
-            {p.featured && (
-              <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-gold via-gold2 to-transparent" />
-            )}
-            <div className="flex flex-col h-full">
-              <Badge variant="outline" className="w-fit font-mono text-[0.62rem] uppercase tracking-widest text-gold border-gold/30 rounded px-2.5 py-1 mb-4 select-none">
-                {p.badge}
-              </Badge>
-              <h3 className="font-serif text-2xl font-light text-white mb-3">{p.title}</h3>
-              <p className="text-sm text-smoke leading-relaxed flex-1 mb-6">{p.desc}</p>
-              
-              <div className="flex flex-wrap gap-2 mb-6">
-                {p.tech.map(t => (
-                  <span key={t} className="font-mono text-[0.65rem] text-muted-foreground bg-white/5 border border-border rounded-full px-3 py-1">
-                    {t}
-                  </span>
-                ))}
-              </div>
-              
-              <div className="flex items-center gap-4 mt-auto">
-                <span className="font-mono text-xs tracking-wide text-gold flex items-center gap-1.5 group-hover:text-gold2 transition-colors">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.11.82-.26.82-.577v-2.165c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.047.138 3.003.404 2.29-1.552 3.296-1.23 3.296-1.23.654 1.653.243 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.807 5.625-5.48 5.92.43.372.823 1.102.823 2.222v3.293c0 .32.216.694.825.577C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                  GitHub
-                </span>
-              </div>
-            </div>
-            
-            {p.featured && p.visual && (
-              <div className="hidden md:flex h-full min-h-[160px] bg-navy border border-border rounded items-center justify-center font-mono text-4xl text-gold/20 tracking-tighter w-full">
-                {p.visual}
-              </div>
-            )}
-          </a>
-        ))}
-      </div>
-    </section>
-  );
-}
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 font-sans">
+          Featured Projects
+        </h2>
 
-export function Experience() {
-  return (
-    <section id="experience" className="px-6 md:px-16 py-28 bg-navy">
-      <div className="section-label">Where I've been</div>
-      <h2 className="section-title">Experience &amp; <em className="text-gold2 italic">education</em></h2>
-      
-      <div className="relative mt-12 animate-fade-up before:content-[''] before:absolute before:left-[1px] before:top-0 before:bottom-0 before:w-px before:bg-gradient-to-b before:from-gold before:to-border">
-        {[
-          {
-            period: "2025 — Present",
-            role: "Lead Developer — P.E.R.O. System",
-            org: "University of the Cordilleras",
-            desc: "Designed and built a cloud-based payroll and workforce management system for a real client (Don Macchiato's Coffee Shop, La Union). Managed the full software development lifecycle from requirements gathering to usability evaluation.",
-            tags: ["Full-Stack", "Cloud", "SUS Evaluation", "System Design"]
-          },
-          {
-            period: "2022 — 2025",
-            role: "Information Technology",
-            org: "University of the Cordilleras — Baguio City, Philippines",
-            desc: "Focused on web systems development, database management, and software engineering.",
-            tags: ["Web Systems", "Software Engineering"]
-          },
-          {
-            period: "2022 — Ongoing",
-            role: "Open Source Contributor",
-            org: "GitHub — @dennisjeanthompson",
-            desc: "Actively building and exploring personal projects — from experiments with AI agents (AutoGPT) to full-stack web apps, utilities, and learning projects.",
-            tags: ["Open Source", "AI", "Python", "JavaScript"]
-          }
-        ].map((item, i) => (
-          <div key={i} className="relative pl-10 pb-12 last:pb-0 before:content-[''] before:absolute before:left-[-3px] before:top-1.5 before:w-2.5 before:h-2.5 before:bg-gold before:rounded-full before:border-2 before:border-navy before:shadow-[0_0_0_3px_rgba(201,168,76,0.2)]">
-            <div className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-muted-foreground mb-2">{item.period}</div>
-            <div className="font-serif text-2xl font-light text-white mb-1">{item.role}</div>
-            <div className="font-mono text-sm text-gold2 mb-3">{item.org}</div>
-            <p className="text-sm text-smoke leading-relaxed max-w-2xl mb-4">{item.desc}</p>
-            <div className="flex flex-wrap gap-2">
-              {item.tags.map(tag => (
-                <span key={tag} className="font-mono text-[0.68rem] text-smoke bg-white/5 border border-border rounded px-2.5 py-1 tracking-wider">
-                  {tag}
-                </span>
-              ))}
+        <div className="space-y-24">
+          {projects.map((project, idx) => (
+            <div key={idx} className="flex flex-col lg:flex-row gap-10 items-center group animate-fade-up">
+              
+              {/* Image Container - takes up roughly half */}
+              <div className="w-full lg:w-1/2 aspect-video rounded-xl overflow-hidden border border-zinc-800 shadow-2xl relative">
+                <div className="absolute inset-0 bg-zinc-950/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Content Container */}
+              <div className="w-full lg:w-1/2 flex flex-col items-start text-left space-y-6">
+                <div>
+                  <h3 className="text-3xl font-bold text-white mb-2">{project.title}</h3>
+                  <p className="text-lg text-zinc-400 leading-relaxed">
+                    {project.shortDescription}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map(tag => (
+                    <Badge key={tag} variant="secondary" className="bg-zinc-800 hover:bg-zinc-700 text-indigo-300 border-transparent font-mono text-xs">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+
+                <ul className="space-y-3 text-zinc-300">
+                  {project.highlights.map((highlight, hIdx) => (
+                    <li key={hIdx} className="flex items-start">
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2.5 mr-3 shrink-0" />
+                      <span className="leading-relaxed">{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-4 pt-4 w-full sm:w-auto">
+                  <Button 
+                    className="w-full sm:w-auto h-12 bg-white text-zinc-950 hover:bg-zinc-200 transition-colors px-6 shadow-lg rounded-full"
+                    onClick={() => window.open(project.liveLink, '_blank')}
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Live Demo
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full sm:w-auto h-12 bg-transparent border-zinc-700 text-white hover:bg-zinc-800 transition-colors px-6 rounded-full"
+                    onClick={() => window.open(project.githubLink, '_blank')}
+                  >
+                    <Code2 className="w-4 h-4 mr-2" />
+                    View Code
+                  </Button>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

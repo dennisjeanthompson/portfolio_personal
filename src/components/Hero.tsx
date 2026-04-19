@@ -1,63 +1,91 @@
 import { Button } from './ui/button';
-import { Badge } from './ui/badge';
-import { ArrowRight, Send } from 'lucide-react';
+import { ArrowDown, FileText, Code2, Briefcase, MessageCircle } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section id="hero" className="min-h-screen relative flex items-center px-6 md:px-16 pt-32 pb-20 overflow-hidden">
-      <div 
-        className="absolute inset-0 opacity-35" 
-        style={{
-          backgroundImage: 'linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-          maskImage: 'radial-gradient(ellipse 70% 70% at 60% 50%, black 20%, transparent 80%)'
-        }}
-      />
-      <div className="absolute top-1/5 right-[5%] w-[520px] h-[520px] bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+    <section id="hero" className="w-full min-h-screen flex items-center justify-center pt-24 pb-12 px-6 md:px-16 bg-[#09090b] relative overflow-hidden">
       
-      <div className="relative z-10 max-w-4xl space-y-6">
-        <Badge variant="outline" className="font-mono text-[0.7rem] uppercase tracking-widest text-gold border-gold/30 rounded py-1.5 px-4 mb-4 gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-          Available for opportunities
-        </Badge>
-        
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-[6rem] font-light leading-none text-white tracking-tight">
-          Dennis<br/><em className="text-gold2 not-italic italic">Jean Thompson</em>
-        </h1>
-        
-        <p className="font-serif text-xl md:text-2xl font-light italic text-muted-foreground mt-2 mb-8">
-          Web Developer
-        </p>
-        
-        <p className="text-base text-smoke max-w-xl leading-relaxed mb-10">
-          I build fast, scalable web applications. Based in Baguio City, Philippines.
-        </p>
-        
-        <div className="flex flex-wrap gap-5">
-          <a href="#projects">
-            <Button className="bg-gold text-navy hover:bg-gold2 font-mono text-xs uppercase tracking-widest font-medium py-6 px-8 rounded-sm">
-              <ArrowRight className="w-4 h-4 mr-2" />
-              View my work
+      <div className="absolute top-1/4 -right-1/4 w-[800px] h-[800px] bg-indigo-500/10 blur-[150px] rounded-full pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-8 items-center z-10 relative">
+        <div className="flex flex-col items-start text-left space-y-6">
+          <div className="inline-flex items-center px-4 py-2 border border-zinc-800 bg-zinc-900/50 rounded-full font-mono text-sm text-zinc-300">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-400 mr-3 animate-pulse"></span>
+            Available for new opportunities
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold font-sans tracking-tight text-white leading-tight">
+            Dennis Jean <br className="hidden md:block" /> Thompson
+          </h1>
+          
+          <h2 className="text-xl md:text-2xl font-medium text-indigo-400 font-mono">
+            Full-Stack Developer | Building fast, accessible web experiences
+          </h2>
+          
+          <p className="text-lg text-zinc-400 max-w-lg leading-relaxed">
+            I build performant applications with React, Node.js, and TypeScript. Focused on clean code, great UX, and scalable solutions.
+          </p>
+
+          <div className="flex flex-wrap gap-5 pt-6">
+            <Button 
+              className="h-14 px-8 text-base bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-full shadow-lg shadow-indigo-500/20 transition-all font-sans"
+              onClick={() => {
+                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              View My Projects
+              <ArrowDown className="w-5 h-5 ml-2" />
             </Button>
-          </a>
-          <a href="#contact">
-            <Button variant="outline" className="border-border text-smoke hover:border-gold hover:text-gold2 font-mono text-xs uppercase tracking-widest py-6 px-8 rounded-sm bg-transparent">
-              Get in touch
+            
+            <Button 
+              variant="outline" 
+              className="h-14 px-8 text-base bg-transparent border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-white font-medium rounded-full transition-all font-sans"
+              onClick={() => window.open('/resume.pdf', '_blank')}
+            >
+              <FileText className="w-5 h-5 mr-2" />
+              Download Resume
             </Button>
-          </a>
-        </div>
-        
-        <div className="pt-16 mt-16 border-t border-border flex gap-12">
-          <div>
-            <div className="font-serif text-4xl font-light text-gold2 leading-none">PH</div>
-            <div className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-muted-foreground mt-2">Baguio City</div>
+          </div>
+
+          <div className="flex items-center gap-6 mt-4 pl-2 w-full md:w-auto">
+            <a href="https://github.com/dennisjeanthompson" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors" aria-label="GitHub">
+              <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/dennisjeanthompson" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors" aria-label="LinkedIn">
+              <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
           </div>
         </div>
-      </div>
-      
-      <div className="absolute bottom-10 right-16 hidden md:flex flex-col items-center gap-3 font-mono text-[0.6rem] tracking-[0.2em] uppercase text-muted-foreground whitespace-nowrap" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
-        <div className="w-px h-12 bg-gradient-to-b from-gold to-transparent animate-pulse" />
-        Scroll
+
+        <div className="relative flex justify-center lg:justify-end animate-fade-up">
+          <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl group">
+             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent z-10 opacity-60"></div>
+             <img 
+              src="https://github.com/dennisjeanthompson.png" 
+              alt="Dennis Jean Thompson" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Subtle floating element */}
+            <div className="absolute -bottom-4 -left-4 w-auto z-20 cursor-default group rounded-xl border border-zinc-800 bg-zinc-900/95 p-4 shadow-xl backdrop-blur-md transition-all duration-300 hover:shadow-indigo-500/10 animate-fade-up">
+               <div className="flex items-start gap-4">
+                 <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:bg-indigo-500/30">
+                    <Code2 className="w-5 h-5" />
+                 </div>
+                 <div className="flex flex-col">
+                   <p className="text-xs font-mono text-zinc-400">Main Stack</p>
+                   <p className="text-sm font-semibold text-white">React, Node, TS</p>
+                   <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-2 transition-all duration-300 ease-in-out">
+                     <div className="pt-2 border-t border-zinc-800/80">
+                       <p className="text-[10px] font-mono text-indigo-400/80 uppercase tracking-wider mb-1">Add-ons & Tools</p>
+                       <p className="text-xs font-medium text-zinc-300">PostgreSQL, Firebase<br/>Tailwind CSS</p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

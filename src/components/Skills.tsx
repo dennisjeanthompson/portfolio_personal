@@ -1,45 +1,59 @@
+import { Terminal, Code, Database, Rocket, Layout, Server, Cpu } from 'lucide-react';
+
 export function Skills() {
+  const groupedSkills = [
+    {
+      group: "Languages & Frameworks",
+      icon: <Code className="w-5 h-5 text-indigo-400" />,
+      items: ["TypeScript / JavaScript", "React & Next.js", "Node.js", "Python"]
+    },
+    {
+      group: "Frontend & Styling",
+      icon: <Layout className="w-5 h-5 text-indigo-400" />,
+      items: ["Tailwind CSS", "Framer Motion", "shadcn/ui", "Astro"]
+    },
+    {
+      group: "Backend & Data",
+      icon: <Server className="w-5 h-5 text-indigo-400" />,
+      items: ["PostgreSQL", "MongoDB", "Express", "GraphQL", "REST APIs"]
+    },
+    {
+      group: "Tools & DevOps",
+      icon: <Rocket className="w-5 h-5 text-indigo-400" />,
+      items: ["Git & GitHub", "Docker", "AWS (EC2, S3)", "Vercel / Netlify", "CI/CD"]
+    }
+  ];
+
   return (
-    <section id="skills" className="px-6 md:px-16 py-28 bg-navy">
-      <div className="section-label">What I work with</div>
-      <h2 className="section-title">My <em className="text-gold2 italic">technical</em> toolkit</h2>
-      
-      <p className="max-w-xl text-smoke mb-14 text-base leading-relaxed">
-        Modern stack for high-performance applications. Excellent performance (98–100), optimized bundle payloads with Islands architecture using Astro.
-      </p>
-      
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-up">
-        {[
-          {
-            icon: '◈', title: 'Frontend',
-            tags: ['Astro', 'TypeScript', 'Tailwind v4', 'React', 'shadcn/ui', 'Responsive']
-          },
-          {
-            icon: '◉', title: 'Backend',
-            tags: ['Node.js', 'Express.js', 'REST APIs', 'JWT Auth', 'PHP', 'Laravel']
-          },
-          {
-            icon: '◫', title: 'Database & Cloud',
-            tags: ['MySQL', 'PostgreSQL', 'Firebase', 'MongoDB', 'Supabase', 'Cloud Hosting']
-          },
-          {
-            icon: '⬡', title: 'Tools',
-            tags: ['Git & GitHub', 'VS Code', 'Figma', 'Agile / Scrum', 'UML']
-          }
-        ].map((cat, i) => (
-          <div key={i} className="bg-navy3 border border-border rounded p-7 relative overflow-hidden group hover:border-gold/40 hover:-translate-y-1 transition-all duration-300">
-            <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-gold to-transparent" />
-            <div className="text-2xl mb-4 text-gold2">{cat.icon}</div>
-            <div className="font-mono text-xs tracking-[0.15em] uppercase text-gold2 mb-4">{cat.title}</div>
-            <div className="flex flex-wrap gap-2">
-              {cat.tags.map(tag => (
-                <span key={tag} className="font-mono text-[0.68rem] text-smoke bg-white/5 border border-border rounded px-2.5 py-1 tracking-wider transition-colors group-hover:border-gold/30 hover:!bg-gold/10 hover:!text-gold2 hover:!border-gold/50 cursor-default">
-                  {tag}
-                </span>
-              ))}
+    <section id="skills" className="py-24 px-6 md:px-16 bg-zinc-950 border-t border-zinc-900/50">
+      <div className="max-w-6xl mx-auto">
+        <div className="inline-flex items-center px-4 py-2 border border-zinc-800 bg-zinc-900/50 rounded-full font-mono text-sm text-indigo-400 mb-6">
+          Tech Stack
+        </div>
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 font-sans">
+          Skills & Tools
+        </h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {groupedSkills.map((category, idx) => (
+            <div key={idx} className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 hover:border-indigo-500/30 transition-all duration-300 animate-fade-up" style={{ animationDelay: `${idx * 100}ms` }}>
+              <div className="w-12 h-12 rounded-xl bg-zinc-800/80 flex items-center justify-center mb-6">
+                {category.icon}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-6">
+                {category.group}
+              </h3>
+              <ul className="space-y-3">
+                {category.items.map((item, itemIdx) => (
+                  <li key={itemIdx} className="flex items-center text-zinc-400 font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-zinc-700 mr-3" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
