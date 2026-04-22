@@ -1,4 +1,4 @@
-import { Terminal, Code, Database, Rocket, Layout, Server, Cpu } from 'lucide-react';
+import { Code, Layout, Server, Rocket } from 'lucide-react';
 
 export function Skills() {
   const groupedSkills = [
@@ -10,17 +10,17 @@ export function Skills() {
     {
       group: "Frontend & Styling",
       icon: <Layout className="w-5 h-5 text-indigo-400" />,
-      items: ["Tailwind CSS", "Framer Motion", "shadcn/ui", "Astro"]
+      items: ["Tailwind CSS", "Framer Motion", "Astro"]
     },
     {
       group: "Backend & Data",
       icon: <Server className="w-5 h-5 text-indigo-400" />,
-      items: ["PostgreSQL", "MongoDB", "Express", "GraphQL", "REST APIs"]
+      items: ["PostgreSQL", "Express", "REST APIs"]
     },
     {
       group: "Tools & DevOps",
       icon: <Rocket className="w-5 h-5 text-indigo-400" />,
-      items: ["Git & GitHub", "Docker", "AWS (EC2, S3)", "Vercel / Netlify", "CI/CD"]
+      items: ["Git & GitHub", "Docker", "Vercel", "CI/CD"]
     }
   ];
 

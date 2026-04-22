@@ -3,33 +3,23 @@ import { Briefcase } from 'lucide-react';
 export function Experience() {
   const experiences = [
     {
-      role: "Lead Software Engineer",
-      company: "P.E.R.O. Network",
-      period: "2023 - Present",
+      role: "Lead Developer — Client Project",
+      company: "P.E.R.O. for Don Macchiato's Coffee Shop",
+      period: "2023 - 2025",
       bullets: [
-        "Architected a centralized, cloud-based employment management platform scaling across 50+ business units.",
-        "Engineered an automated roles & permissions engine that eliminated 40% of manual HR processing bottlenecks.",
-        "Mentored a team of 3 junior developers, establishing code review practices and CI/CD deployment pipelines."
+        "Architected a cloud-based payroll and employee records system for a coffee shop in Bauang, La Union, handling scheduling, attendance, and automated pay calculations.",
+        "Engineered a dynamic roles & permissions engine with branch-based access control, reducing manual HR processing time by 40%.",
+        "Led a team of 3 developers with code review practices and CI/CD deployment via Render & GitHub Actions."
       ]
     },
     {
-      role: "Full Stack Developer",
-      company: "TechSolutions PH",
-      period: "2021 - 2023",
+      role: "Open Source Contributor",
+      company: "AutoGPT",
+      period: "2024",
       bullets: [
-        "Led the migration of a legacy monolithic enterprise application to a Node.js & Vue microservices architecture.",
-        "Optimized Docker container deployment strategies, cutting AWS infrastructure costs by 15%.",
-        "Improved database query performance heavily utilized by client dashboards, bringing load times under 200ms."
-      ]
-    },
-    {
-      role: "Frontend Developer Intern",
-      company: "Creative Digital",
-      period: "2020 - 2021",
-      bullets: [
-        "Developed custom React components for high-traffic e-commerce storefronts, ensuring AAA accessibility standards.",
-        "Integrated robust lazy-loading stategies, lifting Google Lighthouse performance scores from 70 to 95+.",
-        "Collaborated directly with UI/UX designers to translate Figma prototypes into pixel-perfect application views."
+        "Contributed UI improvements to the AutoGPT open-source project, enhancing the conversation interface for complex agent workflows.",
+        "Optimized client-side rendering for large token-stream outputs, improving responsiveness.",
+        "Merged code directly into the main repository — verifiable via public pull request history."
       ]
     }
   ];

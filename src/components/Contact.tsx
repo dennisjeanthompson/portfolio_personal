@@ -22,8 +22,8 @@ export function Contact() {
           <h2 className="text-4xl md:text-6xl font-bold font-sans text-white leading-tight">
             Ready to build <br/> your next idea?
           </h2>
-          <p className="text-lg text-zinc-400 max-w-md leading-relaxed">
-            I'm currently available for full-time opportunities or exciting freelance projects. If you're looking for a developer who product-focused and highly driven, my inbox is always open.
+          <p className="text-lg text-zinc-300/80 max-w-md leading-relaxed">
+            I'm currently available for full-time opportunities or exciting freelance projects. If you're looking for a developer who is product-focused and highly driven, my inbox is always open.
           </p>
 
           <div className="flex flex-col space-y-6 pt-4">
@@ -32,26 +32,32 @@ export function Contact() {
               contact@dennisjeanthompson.com
             </a>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-5">
               {socials.map((social) => {
                 const Icon = social.icon;
                 return (
                   <a
                     key={social.name}
                     href={social.url}
-                    className="relative group p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-indigo-500 hover:bg-zinc-800 transition-all shadow-lg"
+                    className="group flex flex-col items-center gap-2 text-zinc-300 hover:text-white transition-all"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.name}
                   >
-                    <Icon className="w-5 h-5" />
-                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-zinc-800/90 backdrop-blur-sm text-zinc-200 text-[10px] uppercase font-mono tracking-wider px-2.5 py-1 rounded whitespace-nowrap shadow-lg pointer-events-none z-50">
+                    <span className="p-4 rounded-xl bg-zinc-900 border border-zinc-800 group-hover:border-indigo-500 group-hover:bg-zinc-800 transition-all shadow-lg">
+                      <Icon className="w-6 h-6" />
+                    </span>
+                    <span className="text-[11px] font-mono font-medium tracking-wider uppercase text-zinc-500 group-hover:text-indigo-400 transition-colors">
                       {social.name}
                     </span>
                   </a>
                 );
               })}
             </div>
+
+            <p className="text-sm text-zinc-500 font-mono flex items-center gap-2 pt-2">
+              <span>📍</span> Philippines — Open to Remote Worldwide
+            </p>
             
             <div className="pt-4">
               <Button 
@@ -108,7 +114,7 @@ export function Contact() {
               ></textarea>
             </div>
             <Button type="submit" className="w-full h-14 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-lg font-medium tracking-wide transition-all mt-4">
-              Send out
+              Send Message
               <Send className="w-4 h-4 ml-2" />
             </Button>
           </form>

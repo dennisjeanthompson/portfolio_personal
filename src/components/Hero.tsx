@@ -19,7 +19,7 @@ export function Hero() {
           </h1>
           
           <h2 className="text-xl md:text-2xl font-medium text-indigo-400 font-mono">
-            Full-Stack Developer | Building fast, accessible web experiences
+            Full-Stack Developer | Building payroll systems, microservices &amp; AI tools that ship
           </h2>
           
           <p className="text-lg text-zinc-400 max-w-lg leading-relaxed">

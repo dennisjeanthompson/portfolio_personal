@@ -5,40 +5,27 @@ import { Badge } from './ui/badge';
 export function Projects() {
   const projects = [
     {
-      title: "P.E.R.O. Network Payroll System",
-      shortDescription: "A scalable, cloud-based platform standardizing payroll and workforce management.",
+      title: "P.E.R.O. — Payroll & Employee Records Online",
+      shortDescription: "A cloud-based payroll system built for Don Macchiato's Coffee Shop in Bauang, La Union — with real-time dashboards and automated calculations.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
       tags: ["React", "TypeScript", "Node.js", "PostgreSQL"],
       highlights: [
-        "Architected a centralized dashboard capable of handling 50+ local businesses.",
-        "Implemented a dynamic roles-and-permissions rules engine from scratch.",
-        "Reduced manual payroll processing time by 40% across client companies."
-      ],
-      liveLink: "#",
-      githubLink: "#"
-    },
-    {
-      title: "E-Commerce Microservices Migration",
-      shortDescription: "A complete backend rewrite for a major B2B logistics supplier.",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2370&auto=format&fit=crop",
-      tags: ["Vue.js", "Express", "Docker", "AWS"],
-      highlights: [
-        "Spearheaded the transition from a brittle legacy monolith to independent microservices.",
-        "Set up Dockerized containers and AWS automated deployment pipelines.",
-        "Improved system uptime from 96% to 99.9% and resolved critical timeout errors."
+        "Architected a multi-branch dashboard with real-time payroll processing and employee management.",
+        "Implemented a dynamic roles-and-permissions rules engine from scratch with branch-based access control.",
+        "Reduced manual payroll processing time by 40% with automated calculations and scheduling."
       ],
       liveLink: "#",
       githubLink: "#"
     },
     {
       title: "AutoGPT UI Refactor",
-      shortDescription: "An open-source contribution to enhance the usability of autonomous agents.",
+      shortDescription: "An open-source contribution to enhance the usability of autonomous AI agents.",
       image: "https://images.unsplash.com/photo-1675271591211-126ad94e495d?q=80&w=2370&auto=format&fit=crop",
       tags: ["Next.js", "Tailwind CSS", "Python", "OpenAI API"],
       highlights: [
         "Redesigned the primary conversation interface to handle complex nested agent thoughts.",
         "Optimized client-side rendering for large token-stream outputs.",
-        "Merged code directly into the main repository, used by thousands of developers."
+        "Merged code directly into the main repository — verifiable via public PR history."
       ],
       liveLink: "#",
       githubLink: "#"

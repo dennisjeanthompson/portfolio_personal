@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { Code2, Briefcase } from 'lucide-react';
+import { Code2, Briefcase, FileText } from 'lucide-react';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -46,6 +46,15 @@ export function Navbar() {
           <span className="absolute top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-zinc-800/90 backdrop-blur-sm text-zinc-200 text-[10px] uppercase font-mono tracking-wider px-2.5 py-1 rounded whitespace-nowrap shadow-lg pointer-events-none">
             LinkedIn
           </span>
+        </a>
+        <a 
+          href="/resume.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-mono font-medium tracking-wider uppercase rounded-full transition-all shadow-lg shadow-indigo-500/20"
+        >
+          <FileText className="w-4 h-4" />
+          Resume
         </a>
       </div>
     </nav>

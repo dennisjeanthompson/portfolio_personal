@@ -11,13 +11,10 @@ export function About() {
         
         <div className="space-y-6 text-lg md:text-xl text-zinc-400 leading-relaxed font-sans">
           <p>
-            My journey into software development started out of pure curiosity. I wanted to understand how the applications I used daily were built. What began as tinkering with basic HTML and CSS quickly evolved into a deep passion for building robust, scalable web architecture.
+            What started as curiosity about how apps work turned into a passion for building them. Today I architect cloud-based systems — from automated payroll platforms to AI-powered tools — with a focus on clean code, great UX, and leaving every codebase better than I found it.
           </p>
           <p>
-            Fast forward to today, and I’ve had the privilege of architecting systems that power logistics networks and automate administrative operations. My core philosophy is simple: write clean code, focus on the user experience, and leave the codebase better than I found it. I thrive in environments where I can bridge the gap between engineering and design.
-          </p>
-          <p>
-            When I'm not writing code, you can usually find me contributing to open-source agent ecosystems, dissecting new frontend frameworks, or hunting for the perfect cup of coffee. I believe continuous learning is the most important skill an engineer can have, and I bring that mindset to every team I join.
+            Outside of client work, I contribute to open-source projects like AutoGPT, explore new frontend frameworks, and hunt for the perfect cup of coffee. I believe continuous learning is the most important skill an engineer can have, and I bring that mindset to every project I take on.
           </p>
         </div>
       </div>
